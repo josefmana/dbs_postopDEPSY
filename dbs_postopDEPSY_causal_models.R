@@ -50,7 +50,7 @@ for( i in names(d) ) d[[i]] <- d[[i]] %>% `coordinates<-`(
 f <- lapply( names(d), function(i) d[[i]] %>% ggdag() + theme_dag(base_size = 13) + labs( title = nms[[i]] ) + theme( plot.title = element_text(face = "bold") ) )
 
 # arrange the DAGs intro a nice single plot
-( f[[1]] | f[[2]] | f[[3]] ) / ( f[[4]] | f[[5]] ) / ( f[[6]] ) + plot_layout( heights = c(1,1.5,2) )
+( f[[1]] | f[[2]] | f[[3]] ) / ( f[[4]] | f[[5]] ) / ( f[[6]] ) + plot_layout( heights = c(1,1,1.5) )
 
 # save it
 ggsave( "figs/fig_1_causal_representation.jpeg", width = 1.2 * 11.8, height = 1.2 * 13.1 )
